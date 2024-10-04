@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Altere para o nome da sua branch principal
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,11 +16,8 @@ jobs:
         run: |
           npm install
           npm run build
-          
-      - name: Export static files 📂
-        run: npm run export
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out  # Pasta onde os arquivos estáticos serão gerados
+          folder: out
