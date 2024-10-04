@@ -18,7 +18,7 @@ function Hero() {
         resolver: yupResolver(schema),
     });
 
-    const onSubmit = (data: any) => {
+    const onSubmit = (data: { name: string; email: string; personal_phone: string; captcha: string }) => {
         // Aqui você pode enviar os dados do formulário para o RD Station
         console.log(data);
     };
