@@ -1,5 +1,7 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
+import Header from './components/Header';
+import Hero from './components/Hero';
+import EbookInfo from './components/EbookInfo';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
         height={50}
       />
       <Hero />
+      <EbookInfo />
+      <Footer />
     </main>
   );
 }
