@@ -44,7 +44,7 @@ function Hero() {
                                     type="text"
                                     id="name"
                                     {...register('name')}
-                                    className={`border-b-2 border-white focus:outline-none focus:border-blue-500 ${errors.name ? 'border-red-500' : ''} px-3 py-1 w-full bg-transparent text-white`}
+                                    className={`border-b-2 ${errors.name ? 'border-red-500' : 'border-white'} focus:outline-none focus:border-blue-500 px-3 py-1 w-full bg-transparent text-white`}
                                 />
                                 {errors.name && <span className="error text-red-500 absolute bottom-0 left-0">{errors.name.message}</span>}
                             </div>
@@ -53,7 +53,7 @@ function Hero() {
                                 <input
                                     type="email"
                                     id="email" {...register('email')}
-                                    className={`border-b-2 border-white focus:outline-none focus:border-blue-500 ${errors.name ? 'border-red-500' : ''} px-3 py-1 w-full bg-transparent text-white`}
+                                    className={`border-b-2 ${errors.email ? 'border-red-500' : 'border-white'} focus:outline-none focus:border-blue-500 px-3 py-1 w-full bg-transparent text-white`}
                                 />
                                 {errors.email && <span className="error text-red-500 absolute bottom-0 left-0">{errors.email.message}</span>}
                             </div>
@@ -62,7 +62,7 @@ function Hero() {
                                 <input
                                     type="tel"
                                     id="personal_phone" {...register('personal_phone')}
-                                    className={`border-b-2 border-white focus:outline-none focus:border-blue-500 ${errors.name ? 'border-red-500' : ''} px-3 py-1 w-full bg-transparent text-white`}
+                                    className={`border-b-2 ${errors.personal_phone ? 'border-red-500' : 'border-white'} focus:outline-none focus:border-blue-500 px-3 py-1 w-full bg-transparent text-white`}
                                 />
                                 {errors.personal_phone && <span className="error text-red-500 absolute bottom-0 left-0">{errors.personal_phone.message}</span>}
                             </div>
@@ -73,11 +73,15 @@ function Hero() {
                                 <input
                                     type="text"
                                     id="captcha" {...register('captcha')}
-                                    className={`border-b-2 border-white focus:outline-none focus:border-blue-500 ${errors.name ? 'border-red-500' : ''} px-3 py-1 w-full bg-transparent text-white`}
+                                    className={`border-b-2 ${errors.captcha ? 'border-red-500' : 'border-white'} focus:outline-none focus:border-blue-500 px-3 py-1 w-full bg-transparent text-white`}
                                 />
                                 {errors.captcha && <span className="error text-red-500 absolute bottom-0 left-0">{errors.captcha.message}</span>}
                             </div>
-                            <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-4 rounded-full mt-2">
+                            <button
+                                type="submit"
+                                className="bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-4 rounded-full mt-2"
+                                disabled={Object.keys(errors).length > 0}
+                            >
                                 Baixar E-book Grátis
                             </button>
                         </form>
